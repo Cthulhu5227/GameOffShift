@@ -23,7 +23,7 @@ Card game
 | ---- |
 | Jett | 
 | Will| 
-| Michael Kleve | 
+| Michael| 
 |Merrick| 
-|Michael Jean-Richard|
+|Michael|
 
