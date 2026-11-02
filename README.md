@@ -1,6 +1,8 @@
-# GameOffShift
+# GameOffShift 
 
-> *One-line pitch*
+# Fate Shifter (WIP)
+
+> *An Oracle has discovered that she has only 7 days to live, gamble for more time!*
 
 a month-long, open-source game jam running November 1 to December 1, S2026.
 
@@ -10,7 +12,7 @@ a month-long, open-source game jam running November 1 to December 1, S2026.
 ---
 
 ## About the Game
-
+Card game
 
 ### How to Play
 
