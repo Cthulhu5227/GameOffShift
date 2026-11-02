@@ -1,7 +1,8 @@
 # GameOffShift
 
 > *One-line pitch*
- — a month-long, open-source game jam running November 1 to December 1, S2026.
+
+a month-long, open-source game jam running November 1 to December 1, S2026.
 
 **Theme:** `Shift`
 **Play it:** [itch.io page](#)
