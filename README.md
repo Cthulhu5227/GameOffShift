@@ -1,8 +1,8 @@
 # GameOffShift
 
-> *One-line pitch for the game goes here.*
+> *One-line pitch*
 
-Our entry for **[GitHub Game Off 2026](https://itch.io/jam/game-off-2026)** — a month-long, open-source game jam running November 1 to December 1, 2026.
+Our entry for **[GitHub Game Off 2026](https://itch.io/jam/game-off-2026)** — a month-long, open-source game jam running November 1 to December 1, S2026.
 
 **Theme:** `Shift`
 **Play it:** [itch.io page](#)
@@ -17,8 +17,11 @@ Our entry for **[GitHub Game Off 2026](https://itch.io/jam/game-off-2026)** — 
 
 ## Team
 
-| Name | Role |
-| ---- | ---- |
-| Jett Schreiber | *Role* |
-| Will Caulder| *Role* |
+| Name |
+| ---- |
+| Jett | 
+| Will| 
+| Michael 1 | 
+|Merrick| 
+|Michael 2|
 
