@@ -17,6 +17,13 @@ Card game
 ### How to Play
 
 
+## Current game loop
+player is oracle
+Player chooses a eldritch being to play against
+Player plays card game against chosen eldritch
+Onwards 
+
+
 ## Team
 
 | Name |
