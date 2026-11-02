@@ -18,10 +18,10 @@ Card game
 
 
 ## Current game loop
-player is oracle
-Player chooses a eldritch being to play against
-Player plays card game against chosen eldritch
-Onwards 
+- Player is oracle
+- Player chooses a eldritch being to play against
+- Player plays card game against chosen eldritch
+- Onwards 
 
 
 ## Team
