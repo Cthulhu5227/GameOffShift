@@ -1,3 +1,24 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Godot-specific temp files
+*.tmp
+
+# C#/Mono (in case anyone uses the .NET build)
+.mono/
+data_*/
+mono_crash.*.json
+
+# Export output and per-user export settings (can contain keystore passwords)
+/build/
+/export/
+export_credentials.cfg
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
