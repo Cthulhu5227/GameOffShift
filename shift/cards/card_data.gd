@@ -1,7 +1,7 @@
 class_name CardData
 extends Resource
 
-@export var id; StringName # Card ID
+@export var id: StringName # Card ID
 @export var display_name: String
 @export var number: int
 @export var art: Texture2D # Texture
