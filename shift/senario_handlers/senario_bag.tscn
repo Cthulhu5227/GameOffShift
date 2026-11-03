@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://535a1hlgbxwh"]
+
+[ext_resource type="Script" uid="uid://bpgqbwap35h0p" path="res://senario_handlers/senario_bag.gd" id="1_b4vxs"]
+
+[node name="SenarioBag" type="Node" unique_id=2107763649]
+script = ExtResource("1_b4vxs")

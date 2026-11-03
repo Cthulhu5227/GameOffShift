@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://due275wh3ukfu"]
+
+[ext_resource type="Script" uid="uid://c5a78bgg2rj3i" path="res://senario.gd" id="1_c3sh0"]
+[ext_resource type="Texture2D" uid="uid://bqy0t3qitxsjj" path="res://senario_imgs/lost_wallet.png" id="2_mp5hd"]
+
+[node name="senario" type="Control" unique_id=1700118761]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_c3sh0")
+
+[node name="Panel" type="Panel" parent="." unique_id=499108031]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=554646297]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1362836331]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer" unique_id=1035302134]
+layout_mode = 2
+texture = ExtResource("2_mp5hd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer" unique_id=2124992137]
+layout_mode = 2
+text = "meow
+
+
+"
