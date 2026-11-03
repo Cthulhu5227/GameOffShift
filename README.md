@@ -18,10 +18,10 @@ Card game
 
 
 ## Current game loop
-- Player is oracle
-- Player chooses a eldritch being to play against
-- Player plays card game against chosen eldritch
-- Onwards 
+- Player is confronted with a senario
+- Player chooses a tarot card (or doesn't choose any)
+- Player waits for random outcome of scenario, with chances being changed by cards played
+- Maybe??? character interacts with others in office. 
 
 
 ## Team
