@@ -1,0 +1,6 @@
+# OS / editor files anywhere in the repo
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
