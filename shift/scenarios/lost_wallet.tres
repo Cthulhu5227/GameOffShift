@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ScenarioData" format=3 uid="uid://ccj72sjkgf4xa"]
+
+[ext_resource type="Script" uid="uid://b153hi2cfv6ba" path="res://senario_handlers/senario_data.gd" id="1_vf6nq"]
+
+[resource]
+script = ExtResource("1_vf6nq")
+scenario_img = "uid://bqy0t3qitxsjj"
+scenario_text = "Jimmy has lost is wallet. Help jim find it, jackass. 
+
+Play a card, any card!"
+metadata/_custom_type_script = "uid://b153hi2cfv6ba"
