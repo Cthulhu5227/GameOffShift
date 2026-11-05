@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://due275wh3ukfu"]
 
 [ext_resource type="Script" uid="uid://c5a78bgg2rj3i" path="res://senario.gd" id="1_c3sh0"]
-[ext_resource type="Texture2D" uid="uid://bqy0t3qitxsjj" path="res://senario_imgs/lost_wallet.png" id="2_mp5hd"]
+[ext_resource type="Texture2D" uid="uid://bqy0t3qitxsjj" path="res://data/senario_imgs/lost_wallet.png" id="2_mp5hd"]
 
 [node name="senario" type="Control" unique_id=1700118761]
 layout_mode = 3
