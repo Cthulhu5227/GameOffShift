@@ -2,7 +2,7 @@
 
 # Fate Shifter (WIP)
 
-> *An Oracle has discovered that she has only 7 days to live, gamble for more time!*
+> *Divine the divine's plan, all while keep Jeff from accounting off your back!*
 
 a month-long, open-source game jam running November 1 to December 1, S2026.
 
@@ -18,10 +18,10 @@ Card game
 
 
 ## Current game loop
-- Player is oracle
-- Player chooses a eldritch being to play against
-- Player plays card game against chosen eldritch
-- Onwards 
+- Player is confronted with a senario
+- Player chooses a tarot card (or doesn't choose any)
+- Player waits for random outcome of scenario, with chances being changed by cards played
+- Maybe??? character interacts with others in office. 
 
 
 ## Team
