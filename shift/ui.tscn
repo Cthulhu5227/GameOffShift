@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c1j5o5skgjw6i"]
 
+[ext_resource type="Script" uid="uid://dgd6n2681whi8" path="res://ui.gd" id="1_fyqef"]
+
 [node name="UI" type="Control" unique_id=1655379285]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fyqef")
