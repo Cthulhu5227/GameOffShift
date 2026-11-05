@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ScenarioData" format=3 uid="uid://cq5frgb1wkm5e"]
+
+[ext_resource type="Script" uid="uid://b153hi2cfv6ba" path="res://senario_handlers/senario_data.gd" id="1_vf6nq"]
+
+[resource]
+script = ExtResource("1_vf6nq")
+scenario_text = "The smoke alarm is going off because Gary made toast. Gary has made toast every day for 40 years. Gary still cannot make toast.
+
+Gary needs help making toast. "
+the_fool = -0.55
+the_magician = 0.10000000000000009
+the_high_priestess = 0.10000000000000009
+the_empress = 0.3999999999999999
+the_emperor = 0.3999999999999999
+the_hierophant = -0.19999999999999996
+the_lovers = -0.020000000000000018
+the_chariot = -0.19999999999999996
+strength = -0.393
+the_hermit = -0.41600000000000004
+the_hanged_man = 0.236
+death = -0.483
+temperance = 0.6400000000000001
+the_devil = -0.393
+the_tower = 0.31499999999999995
+the_star = -0.348
+the_moon = 0.29200000000000004
+the_sun = -0.33699999999999997
+judgement = -0.281
+metadata/_custom_type_script = "uid://b153hi2cfv6ba"

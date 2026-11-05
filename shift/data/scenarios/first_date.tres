@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="ScenarioData" format=3 uid="uid://rhv1pgorfbai"]
+
+[ext_resource type="Script" uid="uid://b153hi2cfv6ba" path="res://senario_handlers/senario_data.gd" id="1_vf6nq"]
+
+[resource]
+script = ExtResource("1_vf6nq")
+scenario_text = "Kevin is on a first date and has run out of things to say. He just told her about his favourite kind of gravel.
+
+Make Kevin succed on his date tn. "
+base_chance = 0.3
+the_fool = -0.798
+the_magician = -0.696
+the_high_priestess = 0.32600000000000007
+the_empress = 0.5510000000000002
+the_emperor = 0.4159999999999999
+the_hierophant = -0.46099999999999997
+the_lovers = 0.663
+strength = -0.19099999999999995
+the_hermit = -0.91
+justice = -0.506
+the_hanged_man = -0.371
+death = -0.5509999999999999
+temperance = 0.393
+the_devil = 0.393
+the_tower = -0.281
+the_star = 0.4610000000000001
+the_moon = 0.393
+the_sun = 0.43799999999999994
+judgement = -0.32599999999999996
+the_world = 0.32600000000000007
+metadata/_custom_type_script = "uid://b153hi2cfv6ba"

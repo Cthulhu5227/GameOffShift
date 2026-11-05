@@ -5,8 +5,27 @@
 [resource]
 script = ExtResource("1_vf6nq")
 scenario_img = "uid://bqy0t3qitxsjj"
-scenario_text = "Jimmy has lost is wallet. Help jim find it, jackass. 
-
-Play a card, any card!"
-base_chance = 1.0
+scenario_text = "Jimmy has lost is wallet. Help jim find it, jackass. "
+the_fool = -0.696
+the_magician = 0.716
+the_high_priestess = 0.48
+the_empress = 0.34299999999999997
+the_emperor = 0.17500000000000004
+the_hierophant = 0.30400000000000005
+the_lovers = -0.618
+the_chariot = -0.6759999999999999
+strength = -0.029000000000000026
+the_hermit = 0.40200000000000014
+wheel_of_fortune = 0.98
+justice = 0.5390000000000001
+the_hanged_man = -0.265
+death = -0.030000000000000027
+temperance = 0.5390000000000001
+the_devil = -0.265
+the_tower = 0.4610000000000001
+the_star = 0.34299999999999997
+the_moon = 0.40200000000000014
+the_sun = 0.48
+judgement = 0.30400000000000005
+the_world = 0.2450000000000001
 metadata/_custom_type_script = "uid://b153hi2cfv6ba"
