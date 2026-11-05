@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ScenarioData" format=3 uid="uid://cq5frgb1wkm5e"]
 
-[ext_resource type="Script" uid="uid://b153hi2cfv6ba" path="res://senario_handlers/senario_data.gd" id="1_vf6nq"]
+[ext_resource type="Script" uid="uid://b153hi2cfv6ba" path="res://scenario_handlers/scenario_data.gd" id="1_vf6nq"]
 
 [resource]
 script = ExtResource("1_vf6nq")

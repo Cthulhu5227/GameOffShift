@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c8malty2aan6a" path="res://office.tscn" id="2_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://c1j5o5skgjw6i" path="res://ui.tscn" id="3_036b0"]
 [ext_resource type="Script" uid="uid://b7gwaegy4u8on" path="res://camera_3d.gd" id="4_aqk2v"]
-[ext_resource type="PackedScene" uid="uid://535a1hlgbxwh" path="res://senario_handlers/senario_bag.tscn" id="6_dwbse"]
+[ext_resource type="PackedScene" uid="uid://535a1hlgbxwh" path="res://scenario_handlers/scenario_bag.tscn" id="6_dwbse"]
 
 [node name="World" type="Node" unique_id=1974268205]
 
@@ -21,4 +21,4 @@ script = ExtResource("4_aqk2v")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1446493517]
 transform = Transform3D(0.106638014, 0.11594397, 0.9875148, -0.99429786, 0.012434939, 0.10591052, 0, -0.9931779, 0.11660887, 5.915206, 9.96182, -4.048794)
 
-[node name="SenarioBag" parent="." unique_id=2107763649 instance=ExtResource("6_dwbse")]
+[node name="ScenarioBag" parent="." unique_id=2107763649 instance=ExtResource("6_dwbse")]

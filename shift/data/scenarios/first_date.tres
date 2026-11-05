@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ScenarioData" format=3 uid="uid://rhv1pgorfbai"]
 
-[ext_resource type="Script" uid="uid://b153hi2cfv6ba" path="res://senario_handlers/senario_data.gd" id="1_vf6nq"]
+[ext_resource type="Script" uid="uid://b153hi2cfv6ba" path="res://scenario_handlers/scenario_data.gd" id="1_vf6nq"]
 
 [resource]
 script = ExtResource("1_vf6nq")
 scenario_text = "Kevin is on a first date and has run out of things to say. He just told her about his favourite kind of gravel.
 
-Make Kevin succed on his date tn. "
+Make Kevin succeed on his date tn. "
 base_chance = 0.3
 the_fool = -0.798
 the_magician = -0.696

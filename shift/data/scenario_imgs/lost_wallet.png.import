@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://data/senario_imgs/lost_wallet.png"
+source_file="res://data/scenario_imgs/lost_wallet.png"
 dest_files=["res://.godot/imported/lost_wallet.png-af14065c8f594f806693632f918940cb.ctex"]
 
 [params]

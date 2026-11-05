@@ -1,9 +1,9 @@
 extends Control
-const ScenarioButt = preload("res://senario_handlers/senario_button.tscn")
+const ScenarioButt = preload("res://scenario_handlers/scenario_button.tscn")
 
 
 func _ready() -> void:
-	makeSenario()
+	makeScenario()
 	return  
 
 func _process(delta: float) -> void: #lol
@@ -17,7 +17,7 @@ func randomize_position(button: Button) -> void:
 		randf_range(0.0, max_pos.y)
 	)
 
-func makeSenario():
+func makeScenario():
 	var button = ScenarioButt.instantiate()
 	randomize_position(button)
 	add_child(button)

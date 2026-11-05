@@ -33,6 +33,6 @@ func _on_roll_pressed():
 	text.text = data.scenario_text + ("\n\nSuccess!" if success else "\n\nFailed.")
 	rolled.emit(success)
 	await get_tree().create_timer(5.0).timeout
-	get_parent().makeSenario()
+	get_parent().makeScenario()
 	hide()
 	queue_free()
