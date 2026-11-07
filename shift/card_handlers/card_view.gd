@@ -1,9 +1,7 @@
 class_name CardView
 extends Control
 
-## One card in the hand. The root Control is the stable hit area that the Hand
-## positions; the Visual child does the hover lift so the card doesn't flicker
-## when it rises out from under the mouse.
+## One card in the hand.
 
 signal played(view: CardView)
 

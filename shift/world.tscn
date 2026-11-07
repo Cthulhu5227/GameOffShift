@@ -24,4 +24,4 @@ transform = Transform3D(0.106638014, 0.11594397, 0.9875148, -0.99429786, 0.01243
 
 [node name="ScenarioBag" parent="." unique_id=2107763649 instance=ExtResource("6_dwbse")]
 
-[node name="CardBag" parent="." instance=ExtResource("7_cardbag")]
+[node name="CardBag" parent="." unique_id=19963942 instance=ExtResource("7_cardbag")]

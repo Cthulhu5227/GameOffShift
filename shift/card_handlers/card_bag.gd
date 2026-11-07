@@ -3,7 +3,6 @@ extends Node
 
 var cards: Array[CardData] = []
 func _enter_tree():
-	# _enter_tree (not _ready) so the cards are loaded before UI deals the first hand
 	cards = load_cards("res://data/cards")
 
 func load_cards(folder : String) -> Array[CardData]:
@@ -20,7 +19,7 @@ func load_cards(folder : String) -> Array[CardData]:
 	return cards
 
 var _bag: Array[CardData] = []
-var _held: Array[CardData] = [] # drawn and not yet returned, so they aren't put back in the bag
+var _held: Array[CardData] = [] 
 func draw() -> CardData:
 	if _bag.is_empty():
 		_bag = cards.filter(func(c): return c not in _held)
