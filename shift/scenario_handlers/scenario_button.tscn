@@ -2,8 +2,49 @@
 
 [ext_resource type="Script" uid="uid://b4yrfelp4lsgp" path="res://scenario_handlers/Scenario_button.gd" id="1_ui7w7"]
 
-[node name="Scenario_Button" type="Button" unique_id=51746253]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "scenario"
+[sub_resource type="StyleBoxFlat" id="Style_normal"]
+content_margin_left = 14.0
+content_margin_top = 8.0
+content_margin_right = 14.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="Style_hover"]
+content_margin_left = 14.0
+content_margin_top = 8.0
+content_margin_right = 14.0
+content_margin_bottom = 8.0
+bg_color = Color(0.12, 0.12, 0.12, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Scenario_Button" type="Button"]
+custom_minimum_size = Vector2(150, 42)
+offset_right = 150.0
+offset_bottom = 42.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.92, 0.92, 0.92, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("Style_normal")
+theme_override_styles/hover = SubResource("Style_hover")
+theme_override_styles/pressed = SubResource("Style_hover")
+theme_override_styles/focus = SubResource("Style_hover")
+text = "! Fate Calls"
 script = ExtResource("1_ui7w7")

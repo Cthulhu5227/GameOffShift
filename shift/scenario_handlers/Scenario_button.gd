@@ -1,19 +1,8 @@
 extends Button
 
-@onready var scenario_bag: Node = $"../../ScenarioBag"
-const ScenarioUIScene = preload("res://scenario.tscn")
+## The map marker for a scenario. ui.gd listens for `pressed` and opens the popup.
 
 func _ready():
-	pressed.connect(_on_pressed)
-
-func _on_pressed():
-	print("button pressed")
-	show_scenario(scenario_bag.draw())
-	disabled = true
-	hide()
-	queue_free()
-	
-func show_scenario(d: ScenarioData) -> void:
-	var ui = ScenarioUIScene.instantiate()
-	ui.setup(d)
-	get_parent().add_child(ui)
+	var t := create_tween().set_loops().set_trans(Tween.TRANS_SINE)
+	t.tween_property(self, "modulate", Color(1, 1, 1), 0.8)
+	t.tween_property(self, "modulate", Color(0.7, 0.7, 0.7), 0.8)
