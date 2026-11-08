@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ShiftData" format=3]
+
+[ext_resource type="Script" path="res://data/shifts/shift_data.gd" id="1_shift"]
+
+[resource]
+script = ExtResource("1_shift")
+display_name = "Baseline Shift"
+intro_text = "Another day at the office. Fate doesn't file itself.
+
+Jeff from accounting expects results."
+fate_count = 5
+max_fates_on_map = 1
+chance_modifier = 0.0
+hand_size = 6
+draw_per_fate = 0
+keep_leftover_cards = false
+quota = 3
