@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5a78bgg2rj3i" path="res://scenario_handlers/scenario.gd" id="1_uueqv"]
 [ext_resource type="Script" uid="uid://ba1xquxbma62r" path="res://fate_wheel.gd" id="2_8odb4"]
+[ext_resource type="PackedScene" uid="uid://bk0fqlv71his1" path="res://card_handlers/hand.tscn" id="3_hand"]
 
 [sub_resource type="StyleBoxFlat" id="Style_panel"]
 content_margin_left = 28.0
@@ -145,6 +146,17 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
 text = "Chance of success: 50%"
 horizontal_alignment = 1
+
+[node name="PlayedPile" parent="Center/Panel/VBox/Body/Story" instance=ExtResource("3_hand")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+card_spacing = 45.0
+max_width = 260.0
+fan_degrees = 6.0
+bottom_margin = 0.0
+hover_lift = 70.0
+hover_scale = 1.6
 
 [node name="Played" type="RichTextLabel" parent="Center/Panel/VBox/Body/Story"]
 unique_name_in_owner = true

@@ -16,6 +16,20 @@ const MAX_DELTA := 0.35
 @export_range(-2, 2) var order: int = 0
 @export_range(-2, 2) var chaos: int = 0
 
+@export_group("Outcomes")
+@export_multiline var default_success: String
+@export_multiline var default_fail: String
+@export var card_outcomes: Array[CardOutcome] = []
+
+func get_outcome_text(card: CardData, success: bool) -> String:
+	if card:
+		for o in card_outcomes:
+			if o.card and o.card.id == card.id:
+				var t := o.success_text if success else o.fail_text
+				if t != "":
+					return t
+	return default_success if success else default_fail
+
 @export_group("Special Cases")
 @export var overrides: Dictionary[StringName, float] = {}
 

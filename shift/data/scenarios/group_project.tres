@@ -9,8 +9,9 @@ scenario_text = "The group project is due in an hour. Brad has contributed one s
 Keep him in bed so everyone fails!"
 physical = -1
 charisma = 1
-order = -2
-chaos = 2
+order = 2
+chaos = -1
+insight = 1
 ; base_chance = 0.25
 ; the_fool = 0.32600000000000007
 ; the_magician = -0.685

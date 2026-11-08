@@ -16,6 +16,7 @@ const AUTO_CLOSE_SECONDS := 5.0
 @onready var wheel: FateWheel = %Wheel
 @onready var result: Label = %Result
 @onready var roll: Button = %Roll
+@onready var played_pile = %PlayedPile
 
 var data: ScenarioData
 var current_chance: float = 0.0
@@ -61,6 +62,9 @@ func _drop_card(_pos: Vector2, d: Variant) -> void:
 ## Shifts the odds by this scenario's modifier for the card.
 func apply_card(card: CardData) -> void:
 	var delta := data.get_delta(card)
+	var view: CardView = played_pile.add_card(card)
+	view.tooltip_text = "%s %+d%%" % [card.display_name, roundi(delta * 100)]
+	view.set_drag_forwarding(func(_p_): return null, _can_drop_card, _drop_card)
 	current_chance = clampf(current_chance + delta, 0.0, 1.0)
 	var col := "#73e68c" if delta >= 0 else "#f26666"
 	_played_cards.append("%s [color=%s]%+d%%[/color]" % [card.display_name, col, roundi(delta * 100)])

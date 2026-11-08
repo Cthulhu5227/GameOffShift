@@ -12,20 +12,25 @@ const CARD_SCENE = preload("res://card_handlers/card_view.tscn")
 @export var fan_degrees = 4.0## tilt perard away from the middle
 @export var arc_drop = 4.0##how muchuter cards sink, per step squared
 @export var bottom_margin = 12.0
+@export var hover_lift = 50.0
+@export var hover_scale = 1.15
 
 func _ready() -> void:
 	mouse_filter = MOUSE_FILTER_IGNORE #let clicks through to the map
 	resized.connect(_layout)
 
-func add_card(data: CardData) -> void:
+func add_card(data: CardData) -> CardView:
 	if data==null:
 		return
 	var view: CardView = CARD_SCENE.instantiate()
 	view.setup(data)
+	view.hover_lift = hover_lift
+	view.hover_scale = hover_scale
 	view.played.connect(_on_card_played)
 	add_child(view)
 	view.position = Vector2(size.x +40, size.y -view.size.y)##from the right
 	_layout()
+	return view
 
 func get_cards() -> Array[CardView]:
 	var out: Array[CardView] =[]

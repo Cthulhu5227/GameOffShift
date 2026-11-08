@@ -5,8 +5,6 @@ extends Control
 
 signal played(view: CardView)
 
-const HOVER_LIFT := 50.0
-const HOVER_SCALE := 1.15
 const ART_FOLDER := "res://data/card_imgs"
 
 @onready var visual: Control = %Visual
@@ -17,6 +15,8 @@ var _hovered := false
 var _dragging := false
 var _home_tween: Tween
 var _hover_tween: Tween
+var hover_lift := 50.0
+var hover_scale := 1.15
 
 func setup(p_data: CardData) -> CardView:
 	data = p_data
@@ -57,9 +57,9 @@ func _update_hover() -> void:
 	if _hover_tween:
 		_hover_tween.kill()
 	_hover_tween = create_tween().set_parallel().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-	_hover_tween.tween_property(visual, "position", Vector2(0, -HOVER_LIFT) if lifted else Vector2.ZERO, 0.15)
+	_hover_tween.tween_property(visual, "position", Vector2(0, -hover_lift) if lifted else Vector2.ZERO, 0.15)
 	_hover_tween.tween_property(visual, "rotation", -rotation if lifted else 0.0, 0.15)
-	_hover_tween.tween_property(visual, "scale", Vector2.ONE * (HOVER_SCALE if lifted else 1.0), 0.15)
+	_hover_tween.tween_property(visual, "scale", Vector2.ONE * (hover_scale if lifted else 1.0), 0.15)
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	var preview: CardView = load(scene_file_path).instantiate()
