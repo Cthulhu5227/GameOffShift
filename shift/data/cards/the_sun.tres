@@ -8,3 +8,9 @@ id = &"the_sun"
 display_name = "The Sun"
 number = 19
 description = ""
+
+physical = 1
+insight = 0
+charisma = 3
+order = 0
+chaos = 0

@@ -8,3 +8,9 @@ id = &"the_devil"
 display_name = "The Devil"
 number = 15
 description = ""
+
+physical = 2
+insight = 0
+charisma = 0
+order = 0
+chaos = 2

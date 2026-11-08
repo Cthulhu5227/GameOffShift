@@ -8,3 +8,9 @@ id = &"the_hierophant"
 display_name = "The Hierophant"
 number = 5
 description = ""
+
+physical = 0
+insight = 0
+charisma = 1
+order = 3
+chaos = 0

@@ -8,3 +8,9 @@ id = &"the_moon"
 display_name = "The Moon"
 number = 18
 description = ""
+
+physical = 0
+insight = 2
+charisma = 0
+order = 0
+chaos = 2

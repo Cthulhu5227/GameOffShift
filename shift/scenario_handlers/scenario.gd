@@ -60,7 +60,7 @@ func _drop_card(_pos: Vector2, d: Variant) -> void:
 
 ## Shifts the odds by this scenario's modifier for the card.
 func apply_card(card: CardData) -> void:
-	var delta := data.get_chance(card.number)
+	var delta := data.get_delta(card)
 	current_chance = clampf(current_chance + delta, 0.0, 1.0)
 	var col := "#73e68c" if delta >= 0 else "#f26666"
 	_played_cards.append("%s [color=%s]%+d%%[/color]" % [card.display_name, col, roundi(delta * 100)])

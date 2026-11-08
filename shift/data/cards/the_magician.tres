@@ -8,3 +8,9 @@ id = &"the_magician"
 display_name = "The Magician"
 number = 1
 description = ""
+
+physical = 0
+insight = 3
+charisma = 0
+order = 0
+chaos = 1

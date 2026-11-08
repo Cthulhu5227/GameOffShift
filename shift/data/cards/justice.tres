@@ -8,3 +8,9 @@ id = &"justice"
 display_name = "Justice"
 number = 11
 description = ""
+
+physical = 0
+insight = 0
+charisma = 0
+order = 3
+chaos = 0

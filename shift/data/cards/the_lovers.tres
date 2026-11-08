@@ -8,3 +8,9 @@ id = &"the_lovers"
 display_name = "The Lovers"
 number = 6
 description = ""
+
+physical = 0
+insight = 0
+charisma = 3
+order = 0
+chaos = 0

@@ -8,3 +8,9 @@ id = &"the_tower"
 display_name = "The Tower"
 number = 16
 description = ""
+
+physical = 2
+insight = 0
+charisma = 0
+order = 0
+chaos = 3

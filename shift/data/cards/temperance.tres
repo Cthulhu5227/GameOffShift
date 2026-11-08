@@ -8,3 +8,9 @@ id = &"temperance"
 display_name = "Temperance"
 number = 14
 description = ""
+
+physical = 0
+insight = 0
+charisma = 2
+order = 2
+chaos = 0

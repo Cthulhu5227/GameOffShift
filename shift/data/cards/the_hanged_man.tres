@@ -8,3 +8,9 @@ id = &"the_hanged_man"
 display_name = "The Hanged Man"
 number = 12
 description = ""
+
+physical = 0
+insight = 2
+charisma = 0
+order = 0
+chaos = 1

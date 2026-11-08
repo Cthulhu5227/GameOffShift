@@ -8,3 +8,9 @@ id = &"the_emperor"
 display_name = "The Emperor"
 number = 4
 description = ""
+
+physical = 2
+insight = 0
+charisma = 0
+order = 3
+chaos = 0

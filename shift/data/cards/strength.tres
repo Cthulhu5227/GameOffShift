@@ -8,3 +8,9 @@ id = &"strength"
 display_name = "Strength"
 number = 8
 description = ""
+
+physical = 3
+insight = 0
+charisma = 1
+order = 0
+chaos = 0

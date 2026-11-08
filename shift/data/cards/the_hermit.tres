@@ -8,3 +8,9 @@ id = &"the_hermit"
 display_name = "The Hermit"
 number = 9
 description = ""
+
+physical = 0
+insight = 2
+charisma = 0
+order = 1
+chaos = 0

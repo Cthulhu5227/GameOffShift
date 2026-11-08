@@ -8,3 +8,9 @@ id = &"the_fool"
 display_name = "The Fool"
 number = 0
 description = ""
+
+physical = 0
+insight = 0
+charisma = 1
+order = 0
+chaos = 3

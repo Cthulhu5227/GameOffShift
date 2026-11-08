@@ -8,3 +8,9 @@ id = &"judgement"
 display_name = "Judgement"
 number = 20
 description = ""
+
+physical = 0
+insight = 2
+charisma = 0
+order = 2
+chaos = 0

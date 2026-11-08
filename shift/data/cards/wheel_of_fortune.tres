@@ -8,3 +8,9 @@ id = &"wheel_of_fortune"
 display_name = "Wheel of Fortune"
 number = 10
 description = ""
+
+physical = 0
+insight = 0
+charisma = 0
+order = 0
+chaos = 3

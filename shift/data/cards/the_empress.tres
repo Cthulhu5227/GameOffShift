@@ -8,3 +8,9 @@ id = &"the_empress"
 display_name = "The Empress"
 number = 3
 description = ""
+
+physical = 0
+insight = 0
+charisma = 3
+order = 1
+chaos = 0

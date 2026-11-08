@@ -8,3 +8,9 @@ id = &"the_chariot"
 display_name = "The Chariot"
 number = 7
 description = ""
+
+physical = 3
+insight = 0
+charisma = 0
+order = 1
+chaos = 0

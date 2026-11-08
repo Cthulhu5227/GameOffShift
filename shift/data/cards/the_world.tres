@@ -8,3 +8,9 @@ id = &"the_world"
 display_name = "The World"
 number = 21
 description = ""
+
+physical = 1
+insight = 1
+charisma = 1
+order = 1
+chaos = 1

@@ -8,3 +8,9 @@ id = &"the_high_priestess"
 display_name = "The High Priestess"
 number = 2
 description = ""
+
+physical = 0
+insight = 3
+charisma = 0
+order = 1
+chaos = 0
