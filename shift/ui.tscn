@@ -2,6 +2,39 @@
 
 [ext_resource type="Script" uid="uid://dgd6n2681whi8" path="res://ui.gd" id="1_fyqef"]
 [ext_resource type="PackedScene" uid="uid://bk0fqlv71his1" path="res://card_handlers/hand.tscn" id="2_m6e0p"]
+[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="3_pause"]
+
+[sub_resource type="StyleBoxFlat" id="Style_menu_normal"]
+content_margin_left = 16.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0.75)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="Style_menu_hover"]
+content_margin_left = 16.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+bg_color = Color(0.12, 0.12, 0.12, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="UI" type="Control" unique_id=1655379285]
 layout_mode = 3
@@ -23,4 +56,30 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Hand" parent="." unique_id=787588865 instance=ExtResource("2_m6e0p")]
+layout_mode = 1
+
+[node name="MenuButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 60.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.92, 0.92, 0.92, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+tooltip_text = "Pause (Esc)"
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("Style_menu_normal")
+theme_override_styles/pressed = SubResource("Style_menu_normal")
+theme_override_styles/hover = SubResource("Style_menu_hover")
+text = "I"
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_pause")]
+unique_name_in_owner = true
 layout_mode = 1

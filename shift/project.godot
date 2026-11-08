@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="shift"
-run/main_scene="uid://c6iwf2m6g14eo"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon_tower.png"
 config/windows_native_icon="res://icon_tower.ico"
@@ -19,6 +19,7 @@ config/windows_native_icon="res://icon_tower.ico"
 [autoload]
 
 MusicPlayer="*res://music/music_player.gd"
+GameState="*res://game_state.gd"
 
 [display]
 

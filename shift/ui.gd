@@ -7,10 +7,13 @@ const HAND_HEIGHT := 200.0 #keep map buttons out from under the cards
 
 @onready var scenario_layer: Control = $ScenarioLayer
 @onready var hand = $Hand
+@onready var menu_button: Button = %MenuButton
+@onready var pause_menu = %PauseMenu
 @onready var card_bag: CardBag = $"../CardBag"
 @onready var scenario_bag: ScenarioBag = $"../ScenarioBag"
 
 func _ready() -> void:
+	menu_button.pressed.connect(pause_menu.open)
 	hand.card_played.connect(_on_card_played)
 	for i in HAND_SIZE:
 		hand.add_card(card_bag.draw())

@@ -98,7 +98,8 @@ func _on_roll_pressed():
 	roll.grab_focus()
 	rolled.emit(success)
 
-	get_tree().create_timer(AUTO_CLOSE_SECONDS).timeout.connect(_close)
+	# false = this timer stops counting while the game is paused
+	get_tree().create_timer(AUTO_CLOSE_SECONDS, false).timeout.connect(_close)
 
 func _close():
 	if _closing:
