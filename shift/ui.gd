@@ -1,8 +1,9 @@
 extends Control
 
+signal fate_finished(success: bool)
+
 const ScenarioButt = preload("res://scenario_handlers/scenario_button.tscn")
 const ScenarioUI = preload("res://scenario_handlers/scenario.tscn")
-const HAND_SIZE := 5
 const HAND_HEIGHT := 200.0 #keep map buttons out from under the cards
 
 @onready var scenario_layer: Control = $ScenarioLayer
@@ -11,13 +12,11 @@ const HAND_HEIGHT := 200.0 #keep map buttons out from under the cards
 @onready var pause_menu = %PauseMenu
 @onready var card_bag: CardBag = $"../CardBag"
 @onready var scenario_bag: ScenarioBag = $"../ScenarioBag"
+@onready var cutscene_layer: Control = $CutsceneLayer
 
 func _ready() -> void:
 	menu_button.pressed.connect(pause_menu.open)
 	hand.card_played.connect(_on_card_played)
-	for i in HAND_SIZE:
-		hand.add_card(card_bag.draw())
-	makeScenario()
 
 func randomize_position(button: Button) -> void:
 	var area: Vector2 = get_viewport_rect().size
@@ -27,20 +26,26 @@ func randomize_position(button: Button) -> void:
 		randf_range(0.0, max_pos.y)
 	)
 
-func makeScenario():
+func spawn_fate(scenario: ScenarioData, chance_bonus := 0.0) -> void:
 	var button = ScenarioButt.instantiate()
 	randomize_position(button)
-	button.pressed.connect(_open_scenario.bind(button))
+	button.pressed.connect(_open_scenario.bind(button, scenario, chance_bonus))
 	scenario_layer.add_child(button)
-	return true
 
-func _open_scenario(button: Button) -> void:
+func _open_scenario(button: Button, scenario: ScenarioData, chance_bonus: float) -> void:
 	button.queue_free()
 	var popup = ScenarioUI.instantiate()
-	popup.setup(scenario_bag.draw())
-	popup.closed.connect(makeScenario)
+	popup.chance_bonus = chance_bonus
+	popup.setup(scenario)
+	var outcome := {"success": false}
+	popup.rolled.connect(func(s): outcome.success = s)
+	popup.closed.connect(func(): fate_finished.emit(outcome.success))
 	scenario_layer.add_child(popup)
+
+func discard_hand() -> void:
+	for view in hand.get_cards():
+		card_bag.return_card(view.data)
+		view.queue_free()
 
 func _on_card_played(card: CardData) -> void:
 	card_bag.return_card(card)
-	hand.add_card(card_bag.draw())

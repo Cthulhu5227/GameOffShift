@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://b7gwaegy4u8on" path="res://camera_3d.gd" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://535a1hlgbxwh" path="res://scenario_handlers/scenario_bag.tscn" id="6_dwbse"]
 [ext_resource type="PackedScene" path="res://card_handlers/card_bag.tscn" id="7_cardbag"]
+[ext_resource type="Script" path="res://shift_manager.gd" id="8_shift"]
+[ext_resource type="Script" path="res://story_director.gd" id="9_story"]
+
 
 [node name="World" type="Node" unique_id=1974268205]
 
@@ -25,3 +28,10 @@ transform = Transform3D(0.106638014, 0.11594397, 0.9875148, -0.99429786, 0.01243
 [node name="ScenarioBag" parent="." unique_id=2107763649 instance=ExtResource("6_dwbse")]
 
 [node name="CardBag" parent="." unique_id=19963942 instance=ExtResource("7_cardbag")]
+
+[node name="ShiftManager" type="Node" parent="."]
+script = ExtResource("8_shift")
+
+[node name="StoryDirector" type="Node" parent="."]
+script = ExtResource("9_story")
+

@@ -4,12 +4,8 @@
 
 [resource]
 script = ExtResource("1_shift")
-display_name = "Baseline Shift"
-intro_text = "First day dealing fate. Let's see what can be done!"
-fate_count = 5
-max_fates_on_map = 1
-chance_modifier = 0.0
+display_name = "Monday"
+fate_count = 3
 hand_size = 6
-draw_per_fate = 0
-keep_leftover_cards = false
 quota = 3
+; cutscene_before = ExtResource("2_cut") ; This is how you would add a cutscene

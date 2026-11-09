@@ -33,6 +33,12 @@ extends Resource
 ## Successes needed to keep Jeff happy. 0 = no quota.
 @export_range(0, 20) var quota: int = 3
 
+@export_group("Story")
+## Plays before this starts (e.g. "Monday, 9:00 AM"). Optional.
+@export var cutscene_before: PackedScene
+## Plays after this shift ends (e.g. closing computer talking to coworker). Also, optional.
+@export var cutscene_after: PackedScene
+
 
 ## The number of fates this shift will actually have.
 func get_fate_count() -> int:

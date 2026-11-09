@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ShiftData" format=3]
+
+[ext_resource type="Script" path="res://data/shifts/shift_data.gd" id="1_shift"]
+
+[resource]
+script = ExtResource("1_shift")
+display_name = "Tuesday"
+fate_count = 4
+hand_size = 5
+quota = 3
+; cutscene_before = ExtResource("2_cut") ; This is how you would add a cutscene

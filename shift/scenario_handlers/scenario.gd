@@ -23,6 +23,7 @@ var current_chance: float = 0.0
 var _has_rolled := false
 var _closing := false
 var _played_cards: Array[String] = []
+var chance_bonus := 0.0
 
 func setup(p_data: ScenarioData) -> Control:
 	data = p_data
@@ -40,7 +41,7 @@ func _ready():
 	_animate_in()
 
 func _refresh():
-	current_chance = data.base_chance
+	current_chance = clampf(data.base_chance + chance_bonus, 0.0, 1.0)
 	image.texture = load(data.scenario_img) if data.scenario_img != "" else null
 	image.visible = image.texture != null
 	text.text = data.scenario_text.strip_edges()
