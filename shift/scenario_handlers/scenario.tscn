@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://due275wh3ukfu"]
 
 [ext_resource type="Script" uid="uid://c5a78bgg2rj3i" path="res://scenario_handlers/scenario.gd" id="1_uueqv"]
-[ext_resource type="Script" uid="uid://ba1xquxbma62r" path="res://fate_wheel.gd" id="2_8odb4"]
+[ext_resource type="Script" path="res://fate_pentagon.gd" id="2_8odb4"]
 [ext_resource type="PackedScene" uid="uid://bk0fqlv71his1" path="res://card_handlers/hand.tscn" id="3_hand"]
 
 [sub_resource type="StyleBoxFlat" id="Style_panel"]
@@ -176,7 +176,7 @@ size_flags_vertical = 4
 
 [node name="Wheel" type="Control" parent="Center/Panel/VBox/Body/Spinner" unique_id=1215861809]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(260, 260)
+custom_minimum_size = Vector2(320, 320)
 layout_mode = 2
 script = ExtResource("2_8odb4")
 
@@ -185,6 +185,18 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+
+[node name="Outcome" type="RichTextLabel" parent="Center/Panel/VBox/Body/Spinner"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.85, 0.85, 0.85, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="Roll" type="Button" parent="Center/Panel/VBox" unique_id=873697189]

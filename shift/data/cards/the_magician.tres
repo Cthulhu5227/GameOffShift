@@ -7,7 +7,7 @@ script = ExtResource("1_card")
 id = &"the_magician"
 display_name = "The Magician"
 number = 1
-description = ""
+description = "The magician represents potential. It's time to stop living in fantasy and use the tools of the real world."
 
 physical = 0
 insight = 3
