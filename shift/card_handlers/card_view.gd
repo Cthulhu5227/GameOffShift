@@ -9,6 +9,8 @@ const ART_FOLDER := "res://data/card_imgs"
 
 @onready var visual: Control = %Visual
 @onready var full_art: TextureRect = %FullArt
+@onready var outline: Panel = %Outline
+@onready var glow: ColorRect = %Glow
 
 var data: CardData
 var _hovered := false
@@ -17,6 +19,8 @@ var _home_tween: Tween
 var _hover_tween: Tween
 var hover_lift := 50.0
 var hover_scale := 1.15
+var _outline_style: StyleBoxFlat
+var _glow_mat: ShaderMaterial
 
 func setup(p_data: CardData) -> CardView:
 	data = p_data
@@ -27,6 +31,9 @@ func setup(p_data: CardData) -> CardView:
 func _ready():
 	mouse_entered.connect(_set_hovered.bind(true))
 	mouse_exited.connect(_set_hovered.bind(false))
+	_outline_style = outline.get_theme_stylebox("panel").duplicate()
+	outline.add_theme_stylebox_override("panel", _outline_style)
+	_glow_mat = glow.material
 	if data:
 		_refresh()
 
@@ -60,6 +67,9 @@ func _update_hover() -> void:
 	_hover_tween.tween_property(visual, "position", Vector2(0, -hover_lift) if lifted else Vector2.ZERO, 0.15)
 	_hover_tween.tween_property(visual, "rotation", -rotation if lifted else 0.0, 0.15)
 	_hover_tween.tween_property(visual, "scale", Vector2.ONE * (hover_scale if lifted else 1.0), 0.15)
+	_hover_tween.tween_property(_outline_style, "border_color", Color(1, 0.9, 0.5) if lifted else Color(0.15, 0.15, 0.15), 0.15)
+	_hover_tween.tween_property(_outline_style, "shadow_size", 12 if lifted else 0, 0.15)
+	_hover_tween.tween_property(_glow_mat, "shader_parameter/intensity", 1.0 if lifted else 0.0, 0.2)
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	var preview: CardView = load(scene_file_path).instantiate()

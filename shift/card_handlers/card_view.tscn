@@ -1,6 +1,12 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://card_handlers/card_view.gd" id="1_card"]
+[ext_resource type="Shader" path="res://effects/shaders/card_rays.gdshader" id="2_rays"]
+
+[sub_resource type="ShaderMaterial" id="Mat_rays"]
+resource_local_to_scene = true
+shader = ExtResource("2_rays")
+shader_parameter/intensity = 0.0
 
 [sub_resource type="StyleBoxFlat" id="Style_card"]
 bg_color = Color(0, 0, 0, 1)
@@ -47,6 +53,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(55, 80)
+mouse_filter = 2
+
+[node name="Glow" type="ColorRect" parent="Visual"]
+unique_name_in_owner = true
+material = SubResource("Mat_rays")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="Visual"]
