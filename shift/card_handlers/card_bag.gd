@@ -5,7 +5,7 @@ var cards: Array[CardData] = []
 func _enter_tree():
 	cards = load_cards("res://data/cards")
 
-func load_cards(folder : String) -> Array[CardData]:
+static func load_cards(folder : String) -> Array[CardData]:
 	var cards: Array[CardData] = []
 
 	for file in DirAccess.get_files_at(folder):
