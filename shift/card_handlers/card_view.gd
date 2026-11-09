@@ -41,6 +41,15 @@ func _refresh():
 	tooltip_text = data.description
 	# The PNG is the whole card: the card's `art` if set, else data/card_imgs/<id>.png
 	full_art.texture = data.art if data.art else load(ART_FOLDER.path_join(String(data.id) + ".png"))
+	# Special cards get a brand-new material: swapping the shader on the old one
+	# keeps its uniform values (e.g. the rays' gold glow_color leaks into same-named uniforms).
+	if data.glow_shader:
+		_glow_mat = ShaderMaterial.new()
+		_glow_mat.shader = data.glow_shader
+		# A new material stores no uniform values, and the hover tween can't
+		# animate from "nothing", so give intensity a starting value.
+		_glow_mat.set_shader_parameter("intensity", 0.0)
+		glow.material = _glow_mat
 
 ## Called by the Hand to slide the card to its slot in the fan.
 func move_home(pos: Vector2, rot: float) -> void:
