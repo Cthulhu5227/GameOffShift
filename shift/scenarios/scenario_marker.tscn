@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://gc3qeidxre0f"]
+
+[ext_resource type="PackedScene" uid="uid://bxjwbea04u3m4" path="res://assets/models/Indicator.glb" id="1_bxere"]
+[ext_resource type="Script" uid="uid://cmty44i35hk7m" path="res://scenarios/scenario_marker.gd" id="1_pkmn3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mo5ln"]
+
+[node name="ScenarioMarker" type="Area3D" unique_id=809594718]
+script = ExtResource("1_pkmn3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1810761417]
+shape = SubResource("BoxShape3D_mo5ln")
+
+[node name="Indicator" parent="." unique_id=12666764 instance=ExtResource("1_bxere")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

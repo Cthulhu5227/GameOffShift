@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" uid="uid://cmf86vjcjdi4m" path="res://cards/card_data.gd" id="1_card"]
+[ext_resource type="Shader" path="res://cards/shaders/death_glow.gdshader" id="2_glow"]
+
+[resource]
+script = ExtResource("1_card")
+id = &"death"
+display_name = "Death"
+number = 13
+glow_shader = ExtResource("2_glow")
+description = ""
+
+physical = 2
+insight = 0
+charisma = 0
+order = 0
+chaos = 2
