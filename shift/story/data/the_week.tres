@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StoryData" format=3]
+
+[ext_resource type="Script" path="res://story/story_data.gd" id="1_story"]
+[ext_resource type="Script" path="res://story/shift_data.gd" id="2_shiftdata"]
+[ext_resource type="Resource" path="res://story/data/monday.tres" id="3_mon"]
+[ext_resource type="Resource" path="res://story/data/tuesday.tres" id="4_tue"]
+
+[resource]
+script = ExtResource("1_story")
+shifts = Array[ExtResource("2_shiftdata")]([ExtResource("3_mon"), ExtResource("4_tue")])

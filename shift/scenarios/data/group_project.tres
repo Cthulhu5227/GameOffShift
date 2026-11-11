@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="ScenarioData" format=3 uid="uid://cht8fng0oxh30"]
+
+[ext_resource type="Script" uid="uid://b153hi2cfv6ba" path="res://scenarios/scenario_data.gd" id="1_vf6nq"]
+
+[resource]
+script = ExtResource("1_vf6nq")
+scenario_text = "The group project is due in an hour. Brad has contributed one slide. It says \"Introduction.\" That's it.
+
+Keep him in bed so everyone fails!"
+physical = -1
+charisma = 1
+order = 2
+chaos = -1
+insight = 1
+; base_chance = 0.25
+; the_fool = 0.32600000000000007
+; the_magician = -0.685
+; the_high_priestess = -0.596
+; the_empress = -0.865
+; the_emperor = -0.607
+; the_hierophant = -0.483
+; the_lovers = 0.371
+; the_chariot = -0.573
+; strength = -0.528
+; the_hermit = 0.8540000000000001
+; wheel_of_fortune = 0.573
+; justice = -0.43799999999999994
+; the_hanged_man = 1.0
+; death = 0.5510000000000002
+; temperance = -0.735
+; the_devil = 0.506
+; the_tower = -0.865
+; the_star = -0.663
+; the_moon = 0.6179999999999999
+; the_sun = -0.685
+; judgement = -0.46099999999999997
+; the_world = 0.73
+metadata/_custom_type_script = "uid://b153hi2cfv6ba"

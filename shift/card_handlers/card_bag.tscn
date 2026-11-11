@@ -1,6 +1,0 @@
-[gd_scene format=3]
-
-[ext_resource type="Script" path="res://card_handlers/card_bag.gd" id="1_cardbag"]
-
-[node name="CardBag" type="Node"]
-script = ExtResource("1_cardbag")

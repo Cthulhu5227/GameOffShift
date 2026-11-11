@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://od4u220yf3u7"]
 
-[ext_resource type="FontFile" uid="uid://ctosrswonjxv8" path="res://fonts/wizzta.ttf" id="1_font"]
+[ext_resource type="FontFile" uid="uid://ctosrswonjxv8" path="res://assets/fonts/wizzta.ttf" id="1_font"]
 
 [sub_resource type="StyleBoxFlat" id="Button_disabled"]
 content_margin_left = 18.0
