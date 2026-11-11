@@ -8,8 +8,6 @@ func _ready():
 func load_scenarios(folder : String) -> Array[ScenarioData]:
 	var scenarios: Array[ScenarioData] = []
 
-	# list_directory gives the editor file names even in an exported build
-	# (DirAccess would show "burnt_toast.tres.remap" there, which load() can't open).
 	for file in ResourceLoader.list_directory(folder):
 		if file.get_extension() != "tres":
 			continue

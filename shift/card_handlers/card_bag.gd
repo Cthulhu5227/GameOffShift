@@ -8,8 +8,6 @@ func _enter_tree():
 static func load_cards(folder : String) -> Array[CardData]:
 	var cards: Array[CardData] = []
 
-	# list_directory gives the editor file names even in an exported build
-	# (DirAccess would show "the_fool.tres.remap" there).
 	for file in ResourceLoader.list_directory(folder):
 		if file.get_extension() != "tres": # the folder also has card_data.gd
 			continue

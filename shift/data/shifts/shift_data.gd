@@ -17,7 +17,7 @@ extends Resource
 @export var scenarios: Array[ScenarioData] = []
 ## How many fate markers can be on the map at the same time.
 ## 1 = one at a time (like now); higher = choose which to tackle first.
-@export_range(1, 10) var max_fates_on_map: int = 1
+@export_range(1, 10) var max_fates_on_map: int = 3
 ## Added to every fate's base chance this shift. Negative = harder.
 @export_range(-0.5, 0.5, 0.05) var chance_modifier: float = 0.0
 
