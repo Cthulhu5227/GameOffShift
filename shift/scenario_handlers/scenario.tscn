@@ -4,70 +4,6 @@
 [ext_resource type="Script" path="res://fate_pentagon.gd" id="2_8odb4"]
 [ext_resource type="PackedScene" uid="uid://bk0fqlv71his1" path="res://card_handlers/hand.tscn" id="3_hand"]
 
-[sub_resource type="StyleBoxFlat" id="Style_panel"]
-content_margin_left = 28.0
-content_margin_top = 24.0
-content_margin_right = 28.0
-content_margin_bottom = 24.0
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.3, 0.3, 0.3, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="Style_btn_normal"]
-content_margin_left = 16.0
-content_margin_top = 10.0
-content_margin_right = 16.0
-content_margin_bottom = 10.0
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.6, 0.6, 0.6, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="Style_btn_hover"]
-content_margin_left = 16.0
-content_margin_top = 10.0
-content_margin_right = 16.0
-content_margin_bottom = 10.0
-bg_color = Color(0.12, 0.12, 0.12, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="Style_btn_disabled"]
-content_margin_left = 16.0
-content_margin_top = 10.0
-content_margin_right = 16.0
-content_margin_bottom = 10.0
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.25, 0.25, 0.25, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [node name="scenario" type="Control" unique_id=653231952]
 layout_mode = 3
 anchors_preset = 15
@@ -85,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.6)
+color = Color(0.03, 0.025, 0.1, 0.7)
 
 [node name="Center" type="CenterContainer" parent="." unique_id=1950285740]
 layout_mode = 1
@@ -93,14 +29,13 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
-offset_bottom = -170.0
+offset_bottom = -140.0
 grow_vertical = 2
 
 [node name="Panel" type="PanelContainer" parent="Center" unique_id=1528714331]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(760, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("Style_panel")
 
 [node name="VBox" type="VBoxContainer" parent="Center/Panel" unique_id=1894122957]
 layout_mode = 2
@@ -108,8 +43,7 @@ theme_override_constants/separation = 16
 
 [node name="Header" type="Label" parent="Center/Panel/VBox" unique_id=1048986418]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 24
+theme_type_variation = &"HeaderLabel"
 text = "Fate Calls"
 horizontal_alignment = 1
 
@@ -125,7 +59,7 @@ theme_override_constants/separation = 12
 
 [node name="Image" type="TextureRect" parent="Center/Panel/VBox/Body/Story" unique_id=1181034935]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 180)
+custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
@@ -133,8 +67,6 @@ stretch_mode = 5
 [node name="Text" type="RichTextLabel" parent="Center/Panel/VBox/Body/Story" unique_id=1750608454]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/default_color = Color(0.92, 0.92, 0.92, 1)
-theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
@@ -143,7 +75,7 @@ horizontal_alignment = 1
 [node name="Chance" type="Label" parent="Center/Panel/VBox/Body/Story" unique_id=264814988]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_type_variation = &"MutedLabel"
 text = "Chance of success: 50%"
 horizontal_alignment = 1
 
@@ -161,9 +93,8 @@ hover_scale = 1.6
 [node name="Played" type="RichTextLabel" parent="Center/Panel/VBox/Body/Story"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_type_variation = &"MutedRichText"
 mouse_filter = 2
-theme_override_colors/default_color = Color(0.55, 0.55, 0.55, 1)
-theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
 text = "Drag cards here to shift fate"
 fit_content = true
@@ -184,7 +115,7 @@ script = ExtResource("2_8odb4")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
+theme_type_variation = &"HeaderLabel"
 horizontal_alignment = 1
 
 [node name="Outcome" type="RichTextLabel" parent="Center/Panel/VBox/Body/Spinner"]
@@ -192,8 +123,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 mouse_filter = 2
-theme_override_colors/default_color = Color(0.85, 0.85, 0.85, 1)
-theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
@@ -204,13 +134,4 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.92, 0.92, 0.92, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(0.4, 0.4, 0.4, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("Style_btn_normal")
-theme_override_styles/pressed = SubResource("Style_btn_normal")
-theme_override_styles/hover = SubResource("Style_btn_hover")
-theme_override_styles/disabled = SubResource("Style_btn_disabled")
-theme_override_styles/focus = SubResource("Style_btn_hover")
 text = "Spin"

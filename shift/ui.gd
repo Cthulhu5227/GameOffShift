@@ -2,7 +2,7 @@ extends Control
 
 signal fate_finished(success: bool)
 
-const ScenarioButt = preload("res://scenario_handlers/scenario_button.tscn")
+const ScenarioButton = preload("res://scenario_handlers/scenario_button.tscn")
 const ScenarioUI = preload("res://scenario_handlers/scenario.tscn")
 const HAND_HEIGHT := 200.0 #keep map buttons out from under the cards
 
@@ -11,7 +11,6 @@ const HAND_HEIGHT := 200.0 #keep map buttons out from under the cards
 @onready var menu_button: Button = %MenuButton
 @onready var pause_menu = %PauseMenu
 @onready var card_bag: CardBag = $"../CardBag"
-@onready var scenario_bag: ScenarioBag = $"../ScenarioBag"
 @onready var cutscene_layer: Control = $CutsceneLayer
 
 func _ready() -> void:
@@ -27,7 +26,7 @@ func randomize_position(button: Button) -> void:
 	)
 
 func spawn_fate(scenario: ScenarioData, chance_bonus := 0.0) -> void:
-	var button = ScenarioButt.instantiate()
+	var button = ScenarioButton.instantiate()
 	randomize_position(button)
 	button.pressed.connect(_open_scenario.bind(button, scenario, chance_bonus))
 	scenario_layer.add_child(button)

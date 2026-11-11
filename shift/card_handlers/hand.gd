@@ -1,16 +1,16 @@
 extends Control
 
-## Lays out CardViews in a fan along the bottom of the screen. It only handles display 
-## ui.gd does everything else
+## Lays out CardViews in a fan along the bottom of the screen. It only handles display;
+## ui.gd does everything else.
 
 signal card_played(data: CardData)
 
 const CARD_SCENE = preload("res://card_handlers/card_view.tscn")
 
-@export var card_spacing = 95.0 ##gap between card origins when there's moom
-@export var max_width = 700.0## the fan never gets wider than dis
-@export var fan_degrees = 4.0## tilt perard away from the middle
-@export var arc_drop = 4.0##how muchuter cards sink, per step squared
+@export var card_spacing = 95.0 ## gap between card origins when there's room
+@export var max_width = 700.0 ## the fan never gets wider than this
+@export var fan_degrees = 4.0 ## tilt per card away from the middle
+@export var arc_drop = 4.0 ## how much outer cards sink, per step squared
 @export var bottom_margin = 12.0
 @export var hover_lift = 50.0
 @export var hover_scale = 1.15

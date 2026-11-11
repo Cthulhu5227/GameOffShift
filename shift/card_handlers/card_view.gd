@@ -5,8 +5,6 @@ extends Control
 
 signal played(view: CardView)
 
-const ART_FOLDER := "res://data/card_imgs"
-
 @onready var visual: Control = %Visual
 @onready var full_art: TextureRect = %FullArt
 @onready var outline: Panel = %Outline
@@ -39,8 +37,7 @@ func _ready():
 
 func _refresh():
 	tooltip_text = data.description
-	# The PNG is the whole card: the card's `art` if set, else data/card_imgs/<id>.png
-	full_art.texture = data.art if data.art else load(ART_FOLDER.path_join(String(data.id) + ".png"))
+	full_art.texture = data.get_art() # the PNG is the whole card
 	# Special cards get a brand-new material: swapping the shader on the old one
 	# keeps its uniform values (e.g. the rays' gold glow_color leaks into same-named uniforms).
 	if data.glow_shader:

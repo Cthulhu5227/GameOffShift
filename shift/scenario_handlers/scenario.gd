@@ -51,7 +51,7 @@ func _refresh():
 	var labels := PackedStringArray()
 	for t in CardData.TRAITS:
 		radii.append(r0)
-		labels.append("%s ×%s" % [String(t).capitalize(), String.num(data.get_multiplier(t))])
+		labels.append("%s x%s" % [String(t).capitalize(), String.num(data.get_multiplier(t))])
 	current_chance = FateMath.success_chance(radii, weights)
 	image.texture = load(data.scenario_img) if data.scenario_img != "" else null
 	image.visible = image.texture != null
@@ -84,8 +84,8 @@ func apply_card(card: CardData) -> void:
 	var view: CardView = played_pile.add_card(card)
 	view.tooltip_text = "%s %+d%%" % [card.display_name, roundi(delta * 100)]
 	view.set_drag_forwarding(func(_p_): return null, _can_drop_card, _drop_card)
-	var col := "#73e68c" if delta >= 0 else "#f26666"
-	_played_cards.append("%s [color=%s]%+d%%[/color]" % [card.display_name, col, roundi(delta * 100)])
+	# Cards can only grow the web, so the change is never negative.
+	_played_cards.append("%s [color=#73e68c]%+d%%[/color]" % [card.display_name, roundi(delta * 100)])
 	played.text = ", ".join(_played_cards)
 	_update_chance_label()
 	wheel.set_web(radii)
@@ -110,7 +110,7 @@ func _on_roll_pressed():
 	await wheel.roll_to(r.point, r.wedge)
 
 	var t: StringName = CardData.TRAITS[r.wedge]
-	result.text = "%s · %s" % ["SUCCESS" if success else "FAILED", String(t).capitalize()]
+	result.text = "%s / %s" % ["SUCCESS" if success else "FAILED", String(t).capitalize()]
 	result.add_theme_color_override("font_color", SUCCESS_COLOR if success else FAIL_COLOR)
 	outcome.text = data.get_outcome_text(t, _last_card, success)
 

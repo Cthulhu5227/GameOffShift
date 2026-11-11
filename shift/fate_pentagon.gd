@@ -91,7 +91,7 @@ func _draw() -> void:
 	outline.append(outline[0])
 	draw_polyline(outline, RIM_COLOUR, 3.0, true)
 	var font := get_theme_default_font()
-	var fs := 13
+	var fs := 18
 	for i in mini(labels.size(), FateMath.SIDES):
 		var s := font.get_string_size(labels[i], HORIZONTAL_ALIGNMENT_LEFT, -1, fs)
 		var pos := _px(FateMath.corner(i) * 1.2) + Vector2(-s.x / 2.0, s.y / 4.0)

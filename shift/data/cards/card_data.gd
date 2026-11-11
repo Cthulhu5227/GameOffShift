@@ -17,3 +17,9 @@ const TRAITS: Array[StringName] = [&"physical", &"insight", &"charisma", &"order
 @export_range(0, 3) var charisma: int = 0
 @export_range(0, 3) var order: int = 0
 @export_range(0, 3) var chaos: int = 0 
+
+const ART_FOLDER := "res://data/card_imgs"
+
+## The whole-card PNG: `art` if set, else data/card_imgs/<id>.png
+func get_art() -> Texture2D:
+	return art if art else load(ART_FOLDER.path_join(String(id) + ".png"))

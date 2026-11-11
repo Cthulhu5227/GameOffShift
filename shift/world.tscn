@@ -6,9 +6,16 @@
 [ext_resource type="Script" uid="uid://b7gwaegy4u8on" path="res://camera_3d.gd" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://535a1hlgbxwh" path="res://scenario_handlers/scenario_bag.tscn" id="6_dwbse"]
 [ext_resource type="PackedScene" path="res://card_handlers/card_bag.tscn" id="7_cardbag"]
-[ext_resource type="Script" path="res://shift_manager.gd" id="8_shift"]
-[ext_resource type="Script" path="res://story_director.gd" id="9_story"]
+[ext_resource type="Script" uid="uid://blnd3huhonmge" path="res://shift_manager.gd" id="8_shift"]
+[ext_resource type="Script" uid="uid://cjqnrckutk0sa" path="res://story_director.gd" id="9_story"]
 
+[sub_resource type="Environment" id="Environment_s5hjc"]
+background_energy_multiplier = 0.1
+ambient_light_color = Color(1, 0.56078434, 0, 1)
+ambient_light_energy = 1.85
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_mnwf0"]
+dof_blur_far_enabled = true
 
 [node name="World" type="Node" unique_id=1974268205]
 
@@ -29,9 +36,12 @@ transform = Transform3D(0.106638014, 0.11594397, 0.9875148, -0.99429786, 0.01243
 
 [node name="CardBag" parent="." unique_id=19963942 instance=ExtResource("7_cardbag")]
 
-[node name="ShiftManager" type="Node" parent="."]
+[node name="ShiftManager" type="Node" parent="." unique_id=1020521344]
 script = ExtResource("8_shift")
 
-[node name="StoryDirector" type="Node" parent="."]
+[node name="StoryDirector" type="Node" parent="." unique_id=691671324]
 script = ExtResource("9_story")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1254713253]
+environment = SubResource("Environment_s5hjc")
+camera_attributes = SubResource("CameraAttributesPractical_mnwf0")
