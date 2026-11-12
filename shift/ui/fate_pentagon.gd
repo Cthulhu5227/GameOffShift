@@ -1,14 +1,15 @@
 class_name FatePentagon
 extends Control
 
-const FAIL_COLOUR := Color(0.65, 0.22, 0.22)
-const WEB_COLOUR := Color(0.3, 0.7, 0.4, 0.9)
+const FAIL_COLOUR := Color(0, 0, 0)
+const WEB_FALLBACK_COLOUR := Color(0.067, 0.059, 0.18)
 const RIM_COLOUR := Color(0.9, 0.9, 0.9)
-const DIVIDER_COLOUR := Color(1, 1, 1, 0.15)
 const HIGHLIGHT_COLOUR := Color(1, 1, 1, 0.2)
 const LABEL_COLOUR := Color(0.8, 0.8, 0.8)
+const PENTAGRAM_COLOUR := Color(1, 1, 1, 0.35)
 const MARGIN := 36.0
 const BOUNCES := 4
+const CIRCLE_POINTS := 96
 
 var radii := PackedFloat32Array([0, 0, 0, 0, 0]):
 	set(v):
@@ -38,12 +39,11 @@ func _lerp_web(k: float, from: PackedFloat32Array, to: PackedFloat32Array) -> vo
 
 func roll_to(target: Vector2, wedge: int, duration := 2.5) -> void:
 	var path := PackedVector2Array([Vector2.ZERO])
-	var edge := randi() % FateMath.SIDES
+	var angle := randf() * TAU
 	for b in BOUNCES:
-		edge = (edge + 1 + randi() % (FateMath.SIDES - 1)) % FateMath.SIDES
-		var a := FateMath.corner(edge)
-		var c := FateMath.corner((edge + 1) % FateMath.SIDES)
-		path.append(a.lerp(c, randf_range(0.2, 0.8)) * 0.94)
+		# Bounce off the rim, roughly across the circle each time.
+		angle += randf_range(PI * 0.6, PI * 1.4)
+		path.append(Vector2.from_angle(angle) * 0.94)
 	path.append(target)
 	ball_visible = true
 	highlight_wedge = -1
@@ -66,30 +66,43 @@ func _move_ball(k: float, path: PackedVector2Array) -> void:
 		d -= seg
 	queue_redraw()
 
+## Success area matches the panel behind the wheel, so it reads as a hole in the black.
+func _web_colour() -> Color:
+	var panel := get_theme_stylebox("panel", "PanelContainer") as StyleBoxFlat
+	if panel:
+		return Color(panel.bg_color, 1.0) # fully opaque
+	return WEB_FALLBACK_COLOUR
+
 func _draw() -> void:
 	var centre := size / 2.0
-	var outline := PackedVector2Array()
+	var r := _scale()
+	var corners := PackedVector2Array()
 	for i in FateMath.SIDES:
-		outline.append(_px(FateMath.corner(i)))
-	
-	draw_colored_polygon(outline, FAIL_COLOUR)
+		corners.append(_px(FateMath.corner(i)))
+
+	# 1. Fail background: a black disc
+	draw_circle(centre, r, FAIL_COLOUR)
+	# 2. Rolled wedge: a pie slice centred on that stat's corner
 	if highlight_wedge >= 0:
-		var w := highlight_wedge
-		draw_colored_polygon(PackedVector2Array([centre,
-			_px(FateMath.edge_mid((w + FateMath.SIDES - 1) % FateMath.SIDES)),
-			_px(FateMath.corner(w)),
-			_px(FateMath.edge_mid(w))]), HIGHLIGHT_COLOUR)
+		var mid_angle := FateMath.corner(highlight_wedge).angle()
+		var half := PI / FateMath.SIDES
+		var slice := PackedVector2Array([centre])
+		for k in 25:
+			slice.append(centre + Vector2.from_angle(mid_angle - half + 2.0 * half * k / 24.0) * r)
+		draw_colored_polygon(slice, HIGHLIGHT_COLOUR)
 	# 3. Success web (skip if it's too small to triangulate)
 	if radii.size() == FateMath.SIDES and Array(radii).max() > 0.01:
 		var web := PackedVector2Array()
 		for p in FateMath.web_points(radii):
 			web.append(_px(p))
-		draw_colored_polygon(web, WEB_COLOUR)
-	# 4. Wedge borders, rim, labels
-	for i in FateMath.SIDES:
-		draw_line(centre, _px(FateMath.edge_mid(i)), DIVIDER_COLOUR, 1.0, true)
-	outline.append(outline[0])
-	draw_polyline(outline, RIM_COLOUR, 3.0, true)
+		draw_colored_polygon(web, _web_colour())
+	# 4. Pentagram (points on the circle), rim, labels
+	var star := PackedVector2Array()
+	for i in FateMath.SIDES + 1:
+		star.append(corners[(i * 2) % FateMath.SIDES])
+	draw_polyline(star, PENTAGRAM_COLOUR, 2.0, true)
+	draw_arc(centre, r, 0.0, TAU, CIRCLE_POINTS, RIM_COLOUR, 3.0, true)
+
 	var font := get_theme_default_font()
 	var fs := 18
 	for i in mini(labels.size(), FateMath.SIDES):
