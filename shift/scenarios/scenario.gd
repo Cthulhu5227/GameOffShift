@@ -28,6 +28,7 @@ var chance_bonus := 0.0
 var radii := PackedFloat32Array() # web size at each pentagon corner (0..1)
 var weights := PackedFloat32Array() # how often the ball lands in each wedge
 var _last_card: CardData
+var _played_effects: Array[CardEffect] = []
 
 func setup(p_data: ScenarioData) -> Control:
 	data = p_data
@@ -78,6 +79,12 @@ func apply_card(card: CardData) -> void:
 	var growth := FateMath.card_growth(card, data)
 	for i in FateMath.SIDES:
 		radii[i] = minf(radii[i] + growth[i], 1.0)
+
+	var effects := data.get_card_effects(card) # empty unless this scenario lists effects for this card
+	for e in effects:
+		e.on_played(self, card)
+	_played_effects.append_array(effects)
+
 	current_chance = FateMath.success_chance(radii, weights)
 	_last_card = card
 	var delta := current_chance - before

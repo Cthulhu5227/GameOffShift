@@ -1,6 +1,19 @@
 [gd_resource type="Resource" script_class="ScenarioData" format=3 uid="uid://ccj72sjkgf4xa"]
 
 [ext_resource type="Script" uid="uid://b153hi2cfv6ba" path="res://scenarios/scenario_data.gd" id="1_vf6nq"]
+[ext_resource type="Script" uid="uid://bnkisbi5wffhr" path="res://scenarios/card_outcome.gd" id="2_outcome"]
+[ext_resource type="Script" uid="uid://b0536uwafjm4g" path="res://cards/effects/aura_effect.gd" id="3_aura"]
+[ext_resource type="Resource" path="res://cards/data/the_high_priestess.tres" id="4_priestess"]
+[ext_resource type="Shader" path="res://cards/shaders/fate_holy_flame.gdshader" id="5_flame"]
+
+[sub_resource type="Resource" id="Aura_priestess"]
+script = ExtResource("3_aura")
+shader = ExtResource("5_flame")
+
+[sub_resource type="Resource" id="Outcome_priestess"]
+script = ExtResource("2_outcome")
+card = ExtResource("4_priestess")
+effects = Array[ExtResource("3_aura")]([SubResource("Aura_priestess")])
 
 [resource]
 script = ExtResource("1_vf6nq")
@@ -10,6 +23,7 @@ physical = -1
 insight = 2
 order = 1
 chaos = 2
+card_outcomes = Array[ExtResource("2_outcome")]([SubResource("Outcome_priestess")])
 ; the_fool = -0.696
 ; the_magician = 0.716
 ; the_high_priestess = 0.48

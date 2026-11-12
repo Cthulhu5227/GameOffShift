@@ -10,6 +10,7 @@ const PENTAGRAM_COLOUR := Color(1, 1, 1, 0.35)
 const MARGIN := 36.0
 const BOUNCES := 4
 const CIRCLE_POINTS := 96
+const AURA_MARGIN := 40.0 # how far auras reach past the wheel
 
 var radii := PackedFloat32Array([0, 0, 0, 0, 0]):
 	set(v):
@@ -20,6 +21,7 @@ var labels := PackedStringArray()
 var ball := Vector2.ZERO
 var ball_visible := false
 var highlight_wedge := -1
+var _auras := {} # Shader -> ColorRect, so the same aura never stacks
 
 func _scale() -> float:
 	return minf(size.x, size.y) / 2.0 - MARGIN
@@ -36,6 +38,32 @@ func _lerp_web(k: float, from: PackedFloat32Array, to: PackedFloat32Array) -> vo
 	for i in FateMath.SIDES:
 		r.append(lerpf(from[i], to[i], k))
 	radii = r
+
+## Shows a shader effect over the wheel (e.g. from an AuraEffect). Fades in.
+func add_aura(shader: Shader) -> void:
+	if shader == null or _auras.has(shader):
+		return
+	var rect := ColorRect.new()
+	rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var mat := ShaderMaterial.new()
+	mat.shader = shader
+	mat.set_shader_parameter("intensity", 0.0)
+	rect.material = mat
+	add_child(rect) # children draw over the wheel's _draw()
+	_auras[shader] = rect
+	_layout_auras()
+	create_tween().tween_property(mat, "shader_parameter/intensity", 1.0, 0.6)
+
+func _layout_auras() -> void:
+	for rect: ColorRect in _auras.values():
+		rect.position = Vector2.ONE * -AURA_MARGIN
+		rect.size = size + Vector2.ONE * AURA_MARGIN * 2.0
+		rect.material.set_shader_parameter("rect_size", rect.size)
+		rect.material.set_shader_parameter("ring_radius", _scale())
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_RESIZED:
+		_layout_auras()
 
 func roll_to(target: Vector2, wedge: int, duration := 2.5) -> void:
 	var path := PackedVector2Array([Vector2.ZERO])

@@ -52,3 +52,10 @@ func get_outcome_text(t: StringName, card: CardData, success: bool) -> String:
 				if ct != "":
 					return ct
 	return default_success if success else default_fail
+
+func get_card_effects(card: CardData) -> Array[CardEffect]:
+	for o in card_outcomes:
+		if o.card and o.card.id == card.id:
+			return o.effects
+			
+	return []
