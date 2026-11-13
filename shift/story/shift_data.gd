@@ -7,37 +7,51 @@ extends Resource
 
 @export_group("Info")
 @export var display_name: String = "Shift"
+
 ## Shown when the shift starts, e.g. a memo from Jeff.
 @export_multiline var intro_text: String = ""
 
 @export_group("Fates")
+
 ## How many fates happen this shift. Ignored if `scenarios` is filled in.
 @export_range(1, 20) var fate_count: int = 5
+
 ## Fixed fates, in order (for Story). Leave empty to pick at random.
 @export var scenarios: Array[ScenarioData] = []
+
 ## How many fate markers can be on the map at the same time.
 ## 1 = one at a time (like now); higher = choose which to tackle first.
 @export_range(1, 10) var max_fates_on_map: int = 3
+
 ## Added to every fate's base chance this shift. Negative = harder.
 @export_range(-0.5, 0.5, 0.05) var chance_modifier: float = 0.0
 
 @export_group("Cards")
+
 ## Cards dealt at the start of the shift.
 @export_range(1, 15) var hand_size: int = 6
+
 ## Extra cards drawn each time a fate is resolved (0 = no refills).
 @export_range(0, 5) var draw_per_fate: int = 0
+
 ## Keep unplayed cards for the next shift, or discard them.
 @export var keep_leftover_cards: bool = false
 
 @export_group("Quota")
+
 ## Successes needed to keep Jeff happy. 0 = no quota.
 @export_range(0, 20) var quota: int = 3
 
 @export_group("Story")
+
 ## Plays before this starts (e.g. "Monday, 9:00 AM"). Optional.
 @export var cutscene_before: PackedScene
+
 ## Plays after this shift ends (e.g. closing computer talking to coworker). Also, optional.
 @export var cutscene_after: PackedScene
+
+## Creates an array of cards that will appear in your hand for the day shift.
+@export var cards: Array[CardData] = []
 
 
 ## The number of fates this shift will actually have.

@@ -2,8 +2,16 @@ class_name CardBag
 extends Node
 
 var cards: Array[CardData] = []
+var _all_cards: Array[CardData] = []
+
 func _enter_tree():
-	cards = load_cards("res://cards/data")
+	_all_cards = load_cards("res://cards/data")
+	cards = _all_cards
+
+## Limit cards that can be pulled from per day.
+func set_pool(pool: Array[CardData]) -> void:
+	cards = _all_cards if pool.is_empty() else pool
+	_bag.clear()
 
 static func load_cards(folder : String) -> Array[CardData]:
 	var cards: Array[CardData] = []

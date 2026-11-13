@@ -24,8 +24,10 @@ func run_shift(shift: ShiftData) -> Dictionary:
     _resolved = 0
     _successes = 0
     _queue = _pick_scenarios(shift)
+    card_bag.set_pool(shift.cards)
     for i in shift.hand_size:
-        ui.hand.add_card(card_bag.draw())
+        _deal_card()
+
     shift_started.emit(shift)
     _fill_map()
     return await shift_ended
@@ -52,7 +54,7 @@ func _on_fate_finished(success: bool) -> void:
     
     fate_resolved.emit(success)
     for i in _shift.draw_per_fate:
-        ui.hand.add_card(card_bag.draw())
+        _deal_card()
     
     if _resolved >= _shift.get_fate_count():
         _end_shift()
@@ -68,3 +70,8 @@ func _end_shift() -> void:
         "failures": _resolved - _successes,
         "quota_met": _successes >= _shift.quota,
     })
+
+func _deal_card() -> void:
+    var card := card_bag.draw()
+    if card:
+        ui.hand.add_card(card)
