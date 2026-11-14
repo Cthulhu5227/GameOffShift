@@ -7,7 +7,7 @@
 [ext_resource type="Resource" path="res://scenarios/data/lost_wallet.tres" id="5_wallet"]
 [ext_resource type="Resource" path="res://cards/data/strength.tres" id="6_strength"]
 [ext_resource type="Resource" path="res://cards/data/the_chariot.tres" id="7_chariot"]
-[ext_resource type="Resource" path="res://cards/data/the_lovers.tres" id="8_lovers"]
+[ext_resource type="Resource" path="res://cards/data/the_emperor.tres" id="8_lovers"]
 [ext_resource type="Resource" path="res://cards/data/the_high_priestess.tres" id="9_priestess"]
 
 
