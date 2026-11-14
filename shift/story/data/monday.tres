@@ -6,9 +6,11 @@
 [ext_resource type="Resource" path="res://scenarios/data/stuck_cat.tres" id="4_cat"]
 [ext_resource type="Resource" path="res://scenarios/data/lost_wallet.tres" id="5_wallet"]
 [ext_resource type="Resource" path="res://cards/data/strength.tres" id="6_strength"]
-[ext_resource type="Resource" path="res://cards/data/the_chariot.tres" id="7_chariot"]
-[ext_resource type="Resource" path="res://cards/data/the_emperor.tres" id="8_lovers"]
+[ext_resource type="Resource" path="res://cards/data/wheel_of_fortune.tres" id="7_chariot"]
+[ext_resource type="Resource" path="res://cards/data/the_emperor.tres" id="8_emperor"]
 [ext_resource type="Resource" path="res://cards/data/the_high_priestess.tres" id="9_priestess"]
+[ext_resource type="Resource" path="res://cards/data/the_empress.tres" id="10_empress"]
+
 
 
 [resource]
@@ -17,7 +19,7 @@ display_name = "Monday"
 intro_text = "Welcome to your first shift as a fate crisis worker!"
 scenarios = Array[ExtResource("2_scen")]([ExtResource("4_cat"), ExtResource("5_wallet")])
 max_fates_on_map = 1
-cards = Array[ExtResource("3_card")]([ExtResource("6_strength"), ExtResource("7_chariot"), ExtResource("8_lovers"), ExtResource("9_priestess")])
+cards = Array[ExtResource("3_card")]([ExtResource("6_strength"), ExtResource("7_chariot"), ExtResource("8_emperor"), ExtResource("9_priestess"), ExtResource("10_empress")])
 hand_size = 4
 draw_per_fate = 0
 quota = 1

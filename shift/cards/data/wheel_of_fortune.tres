@@ -1,13 +1,19 @@
 [gd_resource type="Resource" script_class="CardData" format=3]
 
 [ext_resource type="Script" uid="uid://cmf86vjcjdi4m" path="res://cards/card_data.gd" id="1_card"]
+[ext_resource type="Script" path="res://cards/card_effect.gd" id="2_effect"]
+[ext_resource type="Script" path="res://cards/effects/roulette_effect.gd" id="3_roulette"]
+
+[sub_resource type="Resource" id="Resource_roulette"]
+script = ExtResource("3_roulette")
 
 [resource]
 script = ExtResource("1_card")
 id = &"wheel_of_fortune"
 display_name = "Wheel of Fortune"
 number = 10
-description = ""
+description = "Fate becomes a game of roulette. Pick red, black or green."
+effects = Array[ExtResource("2_effect")]([SubResource("Resource_roulette")])
 
 physical = 0
 insight = 0

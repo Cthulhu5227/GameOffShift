@@ -9,6 +9,8 @@ const TRAITS: Array[StringName] = [&"physical", &"insight", &"charisma", &"order
 @export var art: Texture2D # Texture
 @export_multiline var description: String # Description of card.
 @export var glow_shader: Shader
+## Effects this card has in every fate, on top of any a scenario adds for it.
+@export var effects: Array[CardEffect] = []
 
 @export_group("Traits")
 @export_range(0, 3) var physical: int = 0 # Say used for physical reqs.
